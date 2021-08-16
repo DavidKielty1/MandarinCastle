@@ -1,4 +1,77 @@
-html {
-  font-size: 15px;
-  font-weight: 400;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.navbar {
+  background-color: #df2407;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbar__logo {
+  //   background-color: #93cc93;
+  background-image: linear-gradient(to top, #ffdd00 0%, #ffec7f 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.fa-chess-rook {
+  margin-right: 1rem;
+  transform: translateY(-10%);
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+
+.navbar__link {
+  background-image: linear-gradient(to top, #ffdd00 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  moz-text-fill-color: transparent;
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+
+.button {
+  background-image: linear-gradient(to top, #ffdd00 0%, #ffe748 100%);
+  padding: 13px;
+  border-radius: 4px;
+  display: flex;
+  color: #df2407;
+  font-size: 1.3rem;
+  text-decoration: none;
+  margin: 20px;
 }
