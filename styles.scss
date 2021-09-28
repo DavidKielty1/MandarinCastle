@@ -11,6 +11,7 @@ p {
   margin: 0;
 }
 
+a,
 h1,
 h2,
 h3 {
@@ -22,7 +23,7 @@ h3 {
 h2,
 h3,
 p {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 img {
@@ -35,8 +36,8 @@ img {
 }
 
 .container {
-  padding: 0 1em;
-  max-width: 600px;
+  padding: 0 2em;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -92,7 +93,7 @@ section {
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
-  font-weight: 00;
+  font-weight: 400;
 }
 
 .fa-phoenix-framework {
@@ -113,6 +114,7 @@ section {
 .navbar__link {
   color: black;
   font-size: 1.3rem;
+  font-weight: 400;
   text-decoration: none;
   padding: 0 1rem;
 }
@@ -131,6 +133,7 @@ section {
   border-radius: 4px;
   display: flex;
   color: white;
+  font-weight: 400;
   font-size: 1.3rem;
   text-decoration: none;
   margin: 20px;
@@ -144,7 +147,7 @@ section {
 .navbar__link:hover {
   color: rgb(37, 37, 37);
   border-bottom: $oxblood solid 4px;
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
 }
 
 @media screen and (max-width: 960px) {
@@ -265,6 +268,13 @@ section {
   z-index: 999;
 }
 
+.hero__container {
+  display: flex;
+  flex-direction: row;
+  padding-left: 4em;
+  width: 100%;
+}
+
 .hero__content h1 {
   background-image: linear-gradient(to bottom, #88293a 0%, #76323f 100%);
   -webkit-background-clip: text;
@@ -287,21 +297,135 @@ section {
   text-decoration: none;
   font-size: 4rem;
   line-height: normal;
+  min-width: 361px;
+}
+
+.hero__btn {
+  font-size: 1rem;
+  border: none;
+  background-image: linear-gradient(to top, $oxblood 0%, rgb(151, 30, 30) 100%);
+  padding: 12px 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.035s;
+  outline: none;
+}
+
+.hero__btn a {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.hero__btn:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #508646;
+  // border: solid $blackboard 0.75px;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+
+.hero__btn:hover {
+  color: white;
+}
+
+.hero__btn:hover:after {
+  width: 100%;
+}
+
+.main__img--container {
+  text-align: center;
+}
+
+#main__img {
+  height: 80%;
+  width: 80%;
+  transform: translateX(140px);
 }
 
 @media screen and (max-width: 500px) {
+  .container {
+    padding: 0 1em;
+  }
+
   .hero__content h1 {
     font-size: 3rem;
   }
   .hero__content h2 {
     font-size: 3rem;
   }
+
+  .hero__container {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    transform: translateY(-50px);
+  }
+
+  #main__img {
+    height: 0%;
+    width: 0%;
+    transform: translateX(0px);
+  }
+
+  // .hero__container {
+  //   transform: translateY(-140px);
+  // }
 }
 
-.container__courses {
-  background-color: rgba(255, 235, 205, 0.767);
+@media screen and (min-width: 500px) and (max-width: 1300px) {
+  .hero__container {
+    padding: 0 15em;
+  }
+
+  #main__img {
+    height: 0%;
+    width: 0%;
+    transform: translateX(140px);
+  }
 }
 
-.container__tutors {
-  background-color: rgba(175, 238, 217, 0.781);
+@media screen and (max-width: 1300px) {
+  hero__container {
+    // display
+  }
+}
+
+.courses {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  top: 0;
+  z-index: 999;
+}
+.lessonplans {
+  background-color: $grain;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  top: 0;
+  z-index: 999;
+}
+
+.tutors {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  top: 0;
+  z-index: 999;
 }
