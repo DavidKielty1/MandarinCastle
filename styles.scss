@@ -2,6 +2,7 @@ $grain: #d7cec7;
 $blackboard: #565656;
 $oxblood: #76323f;
 $tan: #c09f80;
+$hover: #bb233f;
 
 body,
 h1,
@@ -53,7 +54,6 @@ section {
 
 * {
   font-family: "Koh Santepheap", sans-serif;
-
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -251,65 +251,66 @@ section {
   }
 }
 
-//HERO SECTION//
-
-//HERO SECTION//
-
-//HERO SECTION//
+//--------------//
+//--------------//
+// HERO SECTION //
+//--------------//
+//--------------//
 
 .hero {
   background-color: #d7cec7;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   font-size: 1.2rem;
   top: 0;
   z-index: 999;
 }
 
 .hero__container {
-  display: flex;
-  flex-direction: row;
-  padding-left: 4em;
-  width: 100%;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-self: center;
+  margin: 0 auto;
+  height: 90vh;
+  z-index: 1;
+}
+
+.hero__content {
+  max-width: 100%;
+  padding-left: 6em;
 }
 
 .hero__content h1 {
   background-image: linear-gradient(to bottom, #88293a 0%, #76323f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
   font-size: 4rem;
-  line-height: normal;
 }
 
 .hero__content h2 {
   background-image: linear-gradient(to bottom, #565656 0%, #565656 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 4rem;
-  line-height: normal;
-  min-width: 361px;
+  font-size: 3.5rem;
 }
 
 .hero__btn {
   font-size: 1rem;
   border: none;
-  background-image: linear-gradient(to top, $oxblood 0%, rgb(151, 30, 30) 100%);
+  background: $oxblood;
   padding: 12px 32px;
   border-radius: 4px;
   cursor: pointer;
   position: relative;
   transition: all 0.035s;
   outline: none;
+  border: $tan solid 1px;
 }
 
 .hero__btn a {
@@ -318,55 +319,104 @@ section {
   color: white;
   text-decoration: none;
   font-weight: 400;
+  box-sizing: border-box;
 }
 
-.hero__btn:after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: #508646;
-  // border: solid $blackboard 0.75px;
-  transition: all 0.5s;
-  border-radius: 4px;
-}
+// .hero__btn:after {
+//   position: absolute;
+//   content: "";
+//   bottom: 0;
+//   left: 0;
+//   width: 0;
+//   height: 100%;
+//   background: $hover;
+//   border: solid $blackboard 0.75px;
+//   transition: all 0.5s;
+//   border-radius: 4px;
+// }
 
 .hero__btn:hover {
-  color: white;
+  background-color: #bb233f;
+  transition: all 0.5s ease;
+  border: white solid 1px;
 }
 
 .hero__btn:hover:after {
   width: 100%;
 }
 
-.main__img--container {
-  text-align: center;
+.hero__img-container {
+  // display: flex;
+  // justify-content: center;
 }
 
 #main__img {
   height: 80%;
   width: 80%;
-  transform: translateX(140px);
+  display: flex;
+  justify-content: center;
+  transform: translateX(40px);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min_width: 700px) and (max-width: 1000px) {
+  #main__img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 1300px) {
+  .hero__content {
+    padding-left: 0 10em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hero__container {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 90vh;
+    // padding-top: 50px;
+  }
+
+  .hero__content {
+    padding: 0 2em;
+    margin-bottom: 4rem;
+  }
+
+  #main__img {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transform: translateX(10px);
+    transform: translateY(-40px);
+  }
+}
+
+@media screen and (max-width: 400px) {
   .container {
-    padding: 0 1em;
+    padding-left: 0 1em;
+  }
+
+  .hero__content {
+    padding: 0;
   }
 
   .hero__content h1 {
     font-size: 3rem;
   }
   .hero__content h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .hero__container {
     padding-left: 1.25em;
     padding-right: 1.25em;
-    transform: translateY(-50px);
+    // transform: translateY(-150px);
   }
 
   #main__img {
@@ -374,58 +424,79 @@ section {
     width: 0%;
     transform: translateX(0px);
   }
-
-  // .hero__container {
-  //   transform: translateY(-140px);
-  // }
 }
 
-@media screen and (min-width: 500px) and (max-width: 1300px) {
-  .hero__container {
-    padding: 0 15em;
-  }
+//----------//
+//----------//
+// Services //
+//----------//
+//----------//
 
-  #main__img {
-    height: 0%;
-    width: 0%;
-    transform: translateX(140px);
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  hero__container {
-    // display
-  }
-}
-
-.courses {
-  background-color: white;
-  min-height: 100vh;
+.services {
+  background: white;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-size: 1.2rem;
-  top: 0;
-  z-index: 999;
-}
-.lessonplans {
-  background-color: $grain;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  top: 0;
-  z-index: 999;
+  height: 100vh;
 }
 
-.tutors {
-  background-color: white;
-  min-height: 100vh;
+.services__container {
   display: flex;
+  // flex-direction: row;
   justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  top: 0;
-  z-index: 999;
+  flex-wrap: wrap;
+}
+
+.services__card {
+  margin: 1rem;
+  height: 525px;
+  width: 400px;
+  border-radius: 4px;
+  background-image: url("/images/ink.png");
+  background-size: cover;
+  position: relative;
+  color: black;
+  border: black solid 1px;
+}
+
+// .courses {
+//   background-color: white;
+//   min-height: 100vh;
+//   display: flex;
+//   justify-content: left;
+//   align-items: center;
+//   font-size: 1.2rem;
+//   top: 0;
+//   z-index: 999;
+//   max-width: 100%;
+// }
+// .lessonplans {
+//   background-color: $grain;
+//   min-height: 100vh;
+//   display: flex;
+//   justify-content: end;
+//   align-items: center;
+//   font-size: 1.2rem;
+//   top: 0;
+//   z-index: 999;
+//   max-width: 100%;
+// }
+
+// .tutors {
+//   background-color: white;
+//   min-height: 100vh;
+//   display: flex;
+//   justify-content: left;
+//   align-items: center;
+//   font-size: 1.2rem;
+//   top: 0;
+//   z-index: 999;
+//   max-width: 100%;
+// }
+
+.services__container button {
+  border: none;
+  border-radius: 4px;
+  background-color: $oxblood;
+  padding: 12px 32px;
 }
