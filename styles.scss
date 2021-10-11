@@ -259,19 +259,10 @@ section {
 
 .hero {
   max-height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.2rem;
-  top: 0;
-  z-index: 999;
+  background-color: #d7cec7;
 }
 
 .hero__container {
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-between;
-  // align-items: center;
-  background-color: #d7cec7;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -279,11 +270,10 @@ section {
   margin: 0 auto;
   height: 90vh;
   z-index: 1;
-  max-width: 1700px;
+  max-width: 2100px;
 }
 
 .hero__content {
-  max-width: 100%;
   padding-left: 6em;
 }
 
@@ -346,16 +336,9 @@ section {
   width: 100%;
 }
 
-.hero__img-container {
-  // display: flex;
-  // justify-content: center;
-}
-
 #main__img {
   height: 80%;
   width: 80%;
-  display: flex;
-  justify-content: center;
   transform: translateX(40px);
 }
 
@@ -437,24 +420,23 @@ section {
   background: white;
   display: flex;
   flex-direction: column;
+  // justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
 .services__container {
   display: flex;
-  // flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .services__card {
   background-color: $grain;
-  margin: 1.5rem;
+  margin: 1.5rem 0;
   height: 568px;
   max-height: 95vh;
-  width: 500px;
-  max-width: 310px;
+  min-width: 100vw;
   border-radius: 2px;
   background-image: url("/images/ink.png");
   background-size: cover;
@@ -471,15 +453,15 @@ section {
   background-size: cover;
   background-position: top -160px left 20px;
   position: relative;
+  background-size: 35em;
   background-repeat: no-repeat;
   z-index: 1;
 }
 
 .services__card:nth-child(3) {
   background-image: url("/images/dragon2.png");
-  // opacity: 0.25;
   background-size: cover;
-  background-position: top -15px left 180px;
+  background-position: top -5px left 180px;
   background-size: 25rem;
   background-repeat: no-repeat;
   position: relative;
@@ -536,20 +518,17 @@ section {
 }
 
 @media screen and (max-width: 500px) {
-  .services__card {
-    max-width: 100vw;
-  }
-
   .services__card:nth-child(3) {
-    background-image: url("/images/dragon2.png");
-    background-position: top 105px left 0px;
+    background-image: url("/images/dragon.png");
+    background-position: top -35px left 0px;
     background-repeat: no-repeat;
     z-index: 1;
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (max-width: 700px) {
   .services__card {
     min-width: 500px;
+    margin: 1.5rem;
   }
 }
