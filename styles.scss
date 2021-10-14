@@ -1,5 +1,5 @@
 $grain: #d7cec7;
-$blackboard: #565656;
+$blackboard: rgb(66, 66, 66);
 $oxblood: #76323f;
 $tan: #c09f80;
 $hover: #bb233f;
@@ -400,21 +400,14 @@ section {
   .hero__container {
     padding-left: 1.25em;
     padding-right: 1.25em;
-    // transform: translateY(-150px);
-  }
-
-  #main__img {
-    height: 0%;
-    width: 0%;
-    transform: translateX(0px);
   }
 }
 
-//----------//
-//----------//
-// Services //
-//----------//
-//----------//
+//----------////----------////----------//
+//----------////----------////----------//
+// Services //// Services //// Services //
+//----------////----------////----------//
+//----------////----------////----------//
 
 .services {
   background: white;
@@ -422,7 +415,6 @@ section {
   flex-direction: column;
   // justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .services__container {
@@ -433,10 +425,10 @@ section {
 
 .services__card {
   background-color: $grain;
-  margin: 1.5rem 0;
+  margin: 1vw;
   height: 568px;
   max-height: 95vh;
-  min-width: 100vw;
+  min-width: 98vw;
   border-radius: 2px;
   background-image: url("/images/ink.png");
   background-size: cover;
@@ -466,6 +458,7 @@ section {
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
+  margin-bottom: 3vw;
 }
 
 .services__card:nth-child(2) background-image {
@@ -497,7 +490,7 @@ section {
   background-color: $oxblood;
   padding: 12px 32px;
   position: absolute;
-  top: 440px;
+  top: 425px;
   left: 30px;
   z-index: 2;
 }
@@ -524,11 +517,163 @@ section {
     background-repeat: no-repeat;
     z-index: 1;
   }
+
+  .services__card {
+    margin: 1vw 0;
+    width: 98vw;
+  }
 }
 
-@media screen and (min-width: 500px) and (max-width: 700px) {
+@media screen and (min-width: 500px) and (max-width: 1100px) {
   .services__card {
+    margin: 1vw;
+
+    h3 {
+      font-size: 1.7rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .hero {
+    margin: 0 1vw;
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 6000px) {
+  .services__card {
+    max-width: 1000px;
     min-width: 500px;
     margin: 1.5rem;
+  }
+}
+
+//----------////----------////----------//
+//----------////----------////----------//
+//- Footer -////- Footer -////- Footer -//
+//----------////----------////----------//
+//----------////----------////----------//
+
+.footer__container {
+  background-color: $grain;
+  max-width: 100vw;
+  color: $blackboard;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateX(25px);
+}
+
+.footer__link--wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__link--items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1.5rem 0;
+  width: 9rem;
+
+  h2 {
+    color: $blackboard;
+  }
+
+  a {
+    margin-top: 0.4rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: $blackboard;
+  }
+}
+
+.media__details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 3rem;
+
+  #footer__logo {
+    background-image: linear-gradient(to bottom, #88293a 0%, #76323f 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 400;
+    height: 4rem;
+  }
+
+  p {
+    margin: 1rem 0;
+    font-weight: 700;
+  }
+
+  .media__icons {
+    margin: 1rem 0;
+  }
+
+  .media__icon--link {
+    font-size: 30px;
+    margin: 0.5rem;
+    color: $blackboard;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .footer__container {
+    background-color: $grain;
+    max-width: 100vw;
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 4rem;
+    // align-items: center;
+    // border: green solid 1px;
+  }
+
+  .footer__link--wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    // border: red solid 1px;
+  }
+
+  .footer__link--items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // border: blue solid 1px;
+    margin: 2rem 4rem;
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 6000px) {
+  .footer__links {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .footer__container {
+    flex-direction: column;
   }
 }
